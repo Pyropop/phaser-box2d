@@ -11,7 +11,7 @@ class Example extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('logo', 'logo-320.png');
+        this.load.image('logo', '023-ogol.png');
     }
 
     create ()
@@ -25,13 +25,13 @@ class Example extends Phaser.Scene
         const worldId = this.world.worldId;
 
         const box = SpriteToBox(worldId, logo, {
-            restitution: 1.0,
+            restitution: 1.3,
             friction: 0.01
         });
 
         AddSpriteToWorld(worldId, logo, box);
 
-        CreateBoxPolygon({ worldId, type: STATIC, bodyDef: b2DefaultBodyDef(), position: pxmVec2(640, -750), size: new b2Vec2(20, 1), friction: 0.5 });
+        CreateBoxPolygon({ worldId, type: STATIC, bodyDef: b2DefaultBodyDef(), position: pxmVec2(600, -874), size: new b2Vec2(20, 3), friction: 0.5 });
     }
 
     update (time, delta)
@@ -50,7 +50,7 @@ const config = {
     width: 1280,
     height: 768,
     scene: Example,
-    backgroundColor: '#2d2d2d'
+    backgroundColor: '#d2d2d2'
 };
 
 const game = new Phaser.Game(config);
